@@ -1,0 +1,65 @@
+[
+    {
+        "Id": 1,
+        "Name": "Laptop Dell XPS 13",
+        "Description": "Laptop siêu mỏng nhẹ với màn hình 4K",
+        "Price": 1299.99,
+        "PictureUrl": "https://example.com/laptop-xps13.jpg",
+        "ProductTypeId": 1,
+        "ProductBrandId": 1
+    },
+    {
+        "Id": 2,
+        "Name": "iPhone 15 Pro",
+        "Description": "Điện thoại flagship với chip A17",
+        "Price": 999.99,
+        "PictureUrl": "https://example.com/iphone15.jpg",
+        "ProductTypeId": 2,
+        "ProductBrandId": 2
+    },
+    {
+        "Id": 3,
+        "Name": "Samsung Galaxy S23",
+        "Description": "Điện thoại cao cấp của Samsung với camera 200MP",
+        "Price": 899.99,
+        "PictureUrl": "https://example.com/galaxy-s23.jpg",
+        "ProductTypeId": 2,
+        "ProductBrandId": 3
+    },
+    {
+        "Id": 4,
+        "Name": "Sony WH-1000XM5",
+        "Description": "Tai nghe chống ồn hàng đầu với âm thanh tuyệt vời",
+        "Price": 399.99,
+        "PictureUrl": "https://example.com/sony-wh1000xm5.jpg",
+        "ProductTypeId": 3,
+        "ProductBrandId": 4
+    },
+    {
+        "Id": 5,
+        "Name": "MacBook Pro M2",
+        "Description": "Laptop mạnh mẽ với chip Apple M2",
+        "Price": 1999.99,
+        "PictureUrl": "https://example.com/macbook-m2.jpg",
+        "ProductTypeId": 1,
+        "ProductBrandId": 2
+    },
+    {
+        "Id": 6,
+        "Name": "Smart TV LG OLED 55 inch",
+        "Description": "TV OLED chất lượng cao với độ phân giải 4K",
+        "Price": 1499.99,
+        "PictureUrl": "https://example.com/lg-oled-tv.jpg",
+        "ProductTypeId": 4,
+        "ProductBrandId": 5
+    },
+    {
+        "Id": 7,
+        "Name": "Apple Watch Series 9",
+        "Description": "Đồng hồ thông minh với nhiều tính năng sức khỏe",
+        "Price": 499.99,
+        "PictureUrl": "https://example.com/apple-watch9.jpg",
+        "ProductTypeId": 5,
+        "ProductBrandId": 2
+    }
+]
