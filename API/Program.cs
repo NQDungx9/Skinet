@@ -1,8 +1,13 @@
+using API.Errors;
+using API.Extensions;
 using API.Helpers;
+using API.Middleware;
 using AutoMapper;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +15,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Lấy chuỗi kết nối từ appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 // Đăng ký DbContext với SQLite
 builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddControllers();
+builder.Services.AddApplicationServices();
+builder.Services.AddSwaggerDocumentation();
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -38,11 +46,11 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine($"Migration Error: {ex.Message}");
     }
 }
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwaggerDocumentation();
+
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseStaticFiles();
 app.UseAuthorization();
 
